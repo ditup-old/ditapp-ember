@@ -1,0 +1,32 @@
+<header class="page-header">
+  <nav class="main-navigation">
+    <ul class="people-menu header-menu">
+    {{#if authManager.isAuthenticated}}
+      {{#if authManager.data.authenticated.checking}}
+      <li>{{#link-to "index"}}... checking{{/link-to}}</li>
+      {{else}}
+        <li class="header-avatar">
+          {{#link-to "user" authManager.data.authenticated.username}}
+            <span>{{authManager.data.authenticated.username}}</span>
+          {{/link-to}}
+          <ul class="header-submenu">
+            <li>{{#link-to "logout"}}
+              Logout
+            {{/link-to}}</li>
+            <li>
+              {{#link-to "user" authManager.data.authenticated.username}}
+                {{authManager.data.authenticated.username}}
+                Profile
+              {{/link-to}}
+            </li>
+          </ul>
+        </li>
+      {{/if}}
+
+    {{else}}
+      <li>{{#link-to "login"}}login{{/link-to}}</li>
+      <li>{{#link-to "signup"}}signup{{/link-to}}</li>
+    {{/if}}
+    </ul>
+  </nav>
+</header>
