@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import Base from 'ember-simple-auth/authenticators/base';
 
-const { isEmpty } = Ember;
+const { isEmpty, RSVP: { Promise }} = Ember;
 
 export default Base.extend({
   /*
@@ -25,7 +25,7 @@ export default Base.extend({
     // we unload all the store - clear the cache
     this.get('store').unloadAll();
 
-    async function validateCredentials() {
+    return (async function validateCredentials() {
       try {
         // authenticate simply - to test the validity of the credentials
         await this.get('session')
@@ -50,17 +50,12 @@ export default Base.extend({
         };
 
       } catch (e) {
-        this.get('session').invalidate().then(() => {
-          console.error(e);
+        return this.get('session').invalidate().then(() => {
+          // console.error(e);
           throw new Error('Authentication was not successful');
-        })
-        .catch((e) => {
-          console.error(e);
         });
       }
-    }
-
-    return validateCredentials.call(this);
+    }.call(this))
   },
 
   restore (data) {

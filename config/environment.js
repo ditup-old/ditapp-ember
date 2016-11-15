@@ -20,6 +20,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    // custom settings for ember-cli-flash (showing system messages)
+    flashMessageDefaults: {
+      // flash message defaults
+      timeout: 3000,
+      sticky: false,
+      extendedTimeout: 500,
+      preventDuplicates: true
     }
   };
 
