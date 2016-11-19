@@ -1,9 +1,23 @@
-<div class="form-group has-{{display}}">
-  {{input value=value placeholder=name type=type
-  class=(concat 'form-control form-control-' display)}}
-  <span class="form-control-feedback">
-    {{if value validation.messages}}
-  </span>
-  <br>
-  <small class="form-text text-muted">{{hint}}</small>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group has-{{display}}">
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+          {{input value=value placeholder=name type=type
+          class=(concat 'form-control form-control-' display)}}
+          <!--small class="form-text text-muted">{{hint}}</small-->
+        </div>
+        <div class="col-sm-4">
+          <span class="form-control-feedback">
+            {{if value validation.messages}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+

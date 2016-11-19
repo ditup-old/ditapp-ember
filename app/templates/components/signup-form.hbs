@@ -1,22 +1,37 @@
-<form {{action "signupUser" on="submit"}}>
-  <!--div class="form-group has-warning">
-    <input type="text" class="form-control form-control-warning" id="inputWarning1">
-    <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-    <small class="form-text text-muted">Example help text that remains unchanged.</small>
-  </div-->
-  {{signup-form-input value=username name="username"
-    validation=validations.attrs.username
-    hint="Only lowercase letters, numbers and [.-_] between them."}}
-
-  {{signup-form-input value=email name="email"
-    validation=validations.attrs.email
-    hint="Email will be used to send a verification link."}}
-
-  {{signup-form-input value=password name="password" type="password"
-    validation=validations.attrs.password}}
-
-  <div class="form-group {{if formValid 'has-success' 'has-danger'}}">
-    {{input type="submit" value="Sign Up"
-      disabled=(if formValid false true) class="btn btn-primary form-control"}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      Create your account for ditup
+    </div>
   </div>
-</form>
+  <form {{action "signupUser" on="submit"}}>
+    {{signup-form-input value=username name="username"
+      validation=validations.attrs.username
+      hint="Only lowercase letters, numbers and [.-_] between them."}}
+
+    {{signup-form-input value=email name="email"
+      validation=validations.attrs.email
+      hint="Email will be used to send a verification link."}}
+
+    {{signup-form-input value=password name="password" type="password"
+      validation=validations.attrs.password}}
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group {{if formValid 'has-success' 'has-danger'}}">
+          <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+              {{input type="submit" value="Sign Up"
+                disabled=(if formValid false true)
+                class="btn btn-primary form-control"}}
+            </div>
+            <div class="col-sm-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
