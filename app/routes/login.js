@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   actions: {
     authenticate(username, password) {
       this.get('authManager').authenticate('authenticator:basic', username, password).then(() => {
-        this.transitionTo(`/user/${username}`);
+        this.transitionTo(`/`);
         this.get('flashMessages').success(`You're logged in as ${username}`);
       }, (err) => {
         this.get('flashMessages').danger('The login was not successful');

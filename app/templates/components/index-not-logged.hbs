@@ -1,0 +1,122 @@
+<style>
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+
+    body {
+      font-family: Baskerville;
+    }
+
+    a, a:visited {
+      color: #0194fe;
+      border: 2px solid #011149;
+    }
+
+    a:hover {
+      color: #eeeeee;
+      background-color: #011149;
+    }
+
+    .colored {
+        color:#0194fe;
+    }
+
+    .button {
+      text-decoration: none;
+      padding: 7px 10px;
+      margin: 5px;
+    }
+
+    #about {
+        color:011149;
+        background-color:#c4d3e0;
+        font-family: Baskerville;
+        padding:40px;
+    }
+
+    html, body {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    div.page {
+      min-height:100%;
+      width:100%;
+    }
+
+    div#content {
+      z-index:10;
+      background-color:#eeeeee;
+      color: #011149;
+      padding-top: 50px;
+      font-family: "Baskerville" !important;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .page-url {
+      font-family: "Baskerville-bold";
+      font-size: 40px;
+      margin-top:30px;
+    }
+    .app-summary {
+      font-family: "Baskerville-italic";
+      margin-top:20px;
+      margin-bottom: 40px;
+    }
+
+    .introduction {
+      font-family: "Baskerville";
+      font-size: 30px;
+    }
+
+
+
+    @font-face {
+      font-family: "Baskerville-bold";
+      src: url("/fonts/libre-baskerville/LibreBaskerville-Bold.otf");
+    }
+
+    @font-face {
+      font-family: "Baskerville";
+      src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.otf");
+    }
+
+    @font-face {
+      font-family: "Baskerville-italic";
+      src: url("/fonts/libre-baskerville/LibreBaskerville-Italic.otf");
+    }
+
+</style>
+<div id="content" class="page">
+<div class="vertical-center-parent">
+<div class="vertical-center"><!-- container to vertically center -->
+  <div class="introduction" >
+    <span class="colored" >d</span>o <span class="colored" >i</span>t <span class="colored" >t</span>ogether
+  </div>
+  <div class="introduction" >
+    start it <span class="colored" >up</span>
+  </div>
+  <div class="page-url">
+    <span class="colored" >ditup</span>.org
+  </div>
+  <div class="app-summary" >
+    online platform for real-world collaboration
+  </div>
+  <div class="main-buttons">
+    {{#link-to "login" class="button"}}log in{{/link-to}}{{!
+    }}{{#link-to "signup" class="button"}}sign up{{/link-to}}{{!
+    }}<a class="button" href="#about" >read more</a>
+  </div>
+  <div style="height:50px;"></div>
+</div>
+</div>
+</div>
+
+<div id="about" class="page">
+    <h1>about</h1>
+    <div>vision</div>
+    <div>social links: github etc.</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="form-group has-{{display}}">
+  {{input value=value placeholder=name type=type
+  class=(concat 'form-control form-control-' display)}}
+  <span class="form-control-feedback">
+    {{if value validation.messages}}
+  </span>
+  <br>
+  <small class="form-text text-muted">{{hint}}</small>
+</div>

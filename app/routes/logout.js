@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
   async beforeModel() {
     await this.get('authManager').invalidate();
-    await this.get('flashMessages').success('Successfully logged out');
-    return this.transitionTo('/login');
+    this.get('flashMessages').success('Successfully logged out');
+    return this.transitionTo('index');
   }
 });

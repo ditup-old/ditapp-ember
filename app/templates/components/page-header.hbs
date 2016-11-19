@@ -7,18 +7,12 @@
       {{else}}
         <li class="header-avatar">
           {{#link-to "user" authManager.data.authenticated.username}}
-            <span>{{authManager.data.authenticated.username}}</span>
+          <span>{{authManager.data.authenticated.username}} {{fa-icon "caret-down"}}</span>
           {{/link-to}}
           <ul class="header-submenu">
             <li>{{#link-to "logout"}}
               Logout
             {{/link-to}}</li>
-            <li>
-              {{#link-to "user" authManager.data.authenticated.username}}
-                {{authManager.data.authenticated.username}}
-                Profile
-              {{/link-to}}
-            </li>
           </ul>
         </li>
       {{/if}}
