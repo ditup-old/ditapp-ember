@@ -1,0 +1,9 @@
+{{user.username}}
+<div>
+  {{user.givenName}}
+  {{user.familyName}}
+</div>
+
+{{#if loggedAsUser}}
+  {{#link-to 'user-edit' user}}edit profile{{/link-to}}
+{{/if}}

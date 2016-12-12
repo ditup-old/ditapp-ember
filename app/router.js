@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('users');
   this.route('tags');
   this.route('user', { path: '/user/:username' });
+  this.route('user-edit', { path: '/user/:username/edit' });
   this.route('login');
   this.route('logout');
 });

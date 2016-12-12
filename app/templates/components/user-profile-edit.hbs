@@ -1,0 +1,5 @@
+{{#if loggedAsUser}}
+  {{user-profile-edit-form user=user updateProfile=(action updateProfile)}}
+  {{else}}
+  you can't edit the profile of {{user.username}}
+{{/if}}

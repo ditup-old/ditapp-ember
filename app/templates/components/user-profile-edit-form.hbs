@@ -1,0 +1,8 @@
+<form {{action "submitForm" on="submit"}}>
+  {{input value=user.givenName}}
+  {{input value=user.familyName}}
+  <br>
+  {{textarea value=user.description}}
+  <br>
+  {{input type="submit" value="Update Profile"}}
+</form>

@@ -11,6 +11,18 @@ test('should display a signup page', function (assert) {
   });
 });
 
+test('A new user can sign up', function (assert) {
+  visit('/signup');
+  fillIn('input[name=username]', 'user1');
+  fillIn('[name=email]', 'user1@example.com');
+  fillIn('[name=password]', 'asdfasdf');
+  click('[value="Sign Up"]');
+  andThen(() => {
+    assert.equal(currentURL(), '/user/user1');
+  });
+});
+
+/*
 test('should display a signup form with username, email, password twice, Signup submit button', function (assert) {
   visit('/signup');
   andThen(function () {
@@ -51,3 +63,4 @@ test('should highlight password2 green when match', function (assert) {});
 
 // submit button
 test('should activate the submit button only when all is filled', function (assert) {});
+*/
